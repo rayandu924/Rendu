@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: medical_cabinet
+    volumes:
+      - mongo_data:/data/db
+      
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/medical_cabinet
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./frontend
+    image: medical_frontend:latest
+    container_name: frontend
+    restart: always
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

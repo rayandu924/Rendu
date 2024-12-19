@@ -1,0 +1,60 @@
+<!-- frontend/appointments.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendez-vous - Cabinet Médical</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des Rendez-vous</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home">Accueil</a></li>
+                <li><a href="patients.html" id="patients">Patients</a></li>
+                <li><a href="professionals.html" id="professionals">Professionnels</a></li>
+                <li><a href="appointments.html" id="appointments">Rendez-vous</a></li>
+                <li><a href="devices.html" id="devices">Dispositifs Médicaux</a></li>
+                <li><a href="observations.html" id="observations">Observations</a></li>
+                <li><a href="login.html" id="logout">Déconnexion</a></li>
+            </ul>
+        </nav>        
+    </header>
+    <main id="content">
+        <h2>Liste des Rendez-vous</h2>
+        <button id="add-appointment-btn">Ajouter un Rendez-vous</button>
+        <div id="appointments-list">
+            <!-- Liste des rendez-vous -->
+        </div>
+        <div id="appointment-form" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Ajouter/Modifier un Rendez-vous</h3>
+                <form id="appointment-form-inner">
+                    <input type="hidden" id="appointment-id">
+                    <label for="patient_id">Patient :</label>
+                    <select id="patient_id" name="patient_id" required>
+                        <!-- Options dynamiques -->
+                    </select>
+                    
+                    <label for="professional_id">Professionnel :</label>
+                    <select id="professional_id" name="professional_id" required>
+                        <!-- Options dynamiques -->
+                    </select>
+                    
+                    <label for="date">Date et Heure :</label>
+                    <input type="datetime-local" id="date" name="date" required>
+                    
+                    <label for="reason">Motif :</label>
+                    <input type="text" id="reason" name="reason" required>
+                    
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/appointments.js"></script>
+</body>
+</html>

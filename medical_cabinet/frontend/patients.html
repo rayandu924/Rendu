@@ -1,0 +1,63 @@
+<!-- frontend/patients.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients - Cabinet Médical</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des Patients</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home">Accueil</a></li>
+                <li><a href="patients.html" id="patients">Patients</a></li>
+                <li><a href="professionals.html" id="professionals">Professionnels</a></li>
+                <li><a href="appointments.html" id="appointments">Rendez-vous</a></li>
+                <li><a href="devices.html" id="devices">Dispositifs Médicaux</a></li>
+                <li><a href="observations.html" id="observations">Observations</a></li>
+                <li><a href="login.html" id="logout">Déconnexion</a></li>
+            </ul>
+        </nav>        
+    </header>
+    <main id="content">
+        <h2>Liste des Patients</h2>
+        <button id="add-patient-btn">Ajouter un Patient</button>
+        <div id="patients-list">
+            <!-- Liste des patients -->
+        </div>
+        <div id="patient-form" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Ajouter/Modifier un Patient</h3>
+                <form id="patient-form-inner">
+                    <input type="hidden" id="patient-id">
+                    <label for="first_name">Prénom :</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                    
+                    <label for="last_name">Nom :</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                    
+                    <label for="gender">Genre :</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Masculin</option>
+                        <option value="female">Féminin</option>
+                        <option value="other">Autre</option>
+                    </select>
+                    
+                    <label for="birth_date">Date de Naissance :</label>
+                    <input type="date" id="birth_date" name="birth_date" required>
+                    
+                    <label for="contact">Contact :</label>
+                    <input type="text" id="contact" name="contact" required>
+                    
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/patients.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!-- frontend/observations.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Observations - Cabinet Médical</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des Observations</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home">Accueil</a></li>
+                <li><a href="patients.html" id="patients">Patients</a></li>
+                <li><a href="professionals.html" id="professionals">Professionnels</a></li>
+                <li><a href="appointments.html" id="appointments">Rendez-vous</a></li>
+                <li><a href="devices.html" id="devices">Dispositifs Médicaux</a></li>
+                <li><a href="observations.html" id="observations">Observations</a></li>
+                <li><a href="login.html" id="logout">Déconnexion</a></li>
+            </ul>
+        </nav>        
+    </header>
+    <main id="content">
+        <h2>Liste des Observations</h2>
+        <button id="add-observation-btn">Ajouter une Observation</button>
+        <div id="observations-list">
+            <!-- Liste des observations -->
+        </div>
+        <div id="observation-form" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Ajouter/Modifier une Observation</h3>
+                <form id="observation-form-inner">
+                    <input type="hidden" id="observation-id">
+                    <label for="patient_id">Patient :</label>
+                    <select id="patient_id" name="patient_id" required>
+                        <!-- Options dynamiques -->
+                    </select>
+                    
+                    <label for="date">Date et Heure :</label>
+                    <input type="datetime-local" id="date" name="date" required>
+                    
+                    <label for="tension_systolic">Tension Systolique (mmHg) :</label>
+                    <input type="number" id="tension_systolic" name="tension_systolic" required>
+                    
+                    <label for="tension_diastolic">Tension Diastolique (mmHg) :</label>
+                    <input type="number" id="tension_diastolic" name="tension_diastolic" required>
+                    
+                    <label for="rythme_cardiaque">Rythme Cardiaque (/min) :</label>
+                    <input type="number" id="rythme_cardiaque" name="rythme_cardiaque" required>
+                    
+                    <label for="oxymetrie">Oxymétrie (%) :</label>
+                    <input type="number" id="oxymetrie" name="oxymetrie" required>
+                    
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/observations.js"></script>
+</body>
+</html>
